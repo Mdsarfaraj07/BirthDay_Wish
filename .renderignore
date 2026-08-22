@@ -1,0 +1,69 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+DOCKER_SETUP.md
+RENDER_DEPLOYMENT.md
+*.md
+
+# Docker (local development)
+docker-compose.yml
+.dockerignore
+Dockerfile
+start.sh
+start.bat
+
+# IDE and editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist
+build
+.next
+.nuxt
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache
+.eslintcache
+
+# Testing
+.pytest_cache
+.coverage
+htmlcov
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Other
+.htaccess
+.well-known

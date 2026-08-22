@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afreen Rukhsar - 21st Birthday Celebration 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF69B4;
+            --secondary: #FFB6D9;
+            --dark: #1a0033;
+            --accent: #FF1493;
+            --light: #fff;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Poppins', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--dark), #2d0052, #330033, var(--dark));
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== FEATURE 1: Navigation with Glassmorphism ===== */
+        nav {
+            background: rgba(26, 0, 51, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(255, 105, 180, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 12px 50px;
+            background: rgba(26, 0, 51, 0.98);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF69B4, #FFB6D9, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: logoGlow 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.4)); }
+            50% { filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.8)); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-small {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* ===== FEATURE 2: Particle Background ===== */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 105, 180, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        /* ===== FEATURE 3: Hero Section with Layered Parallax ===== */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+
+        .hero-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .hero-layer-1 { opacity: 0.1; filter: blur(2px); }
+        .hero-layer-2 { opacity: 0.15; filter: blur(4px); }
+        .hero-layer-3 { opacity: 0.2; filter: blur(6px); }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 900px;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 0 10px 40px rgba(255, 105, 180, 0.5);
+            animation: slideDown 0.8s ease-out;
+            letter-spacing: -2px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-name {
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: slideDown 0.8s ease-out 0.2s both;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #ddd;
+            line-height: 1.8;
+            margin: 25px 0;
+            animation: slideDown 0.8s ease-out 0.4s both;
+        }
+
+        .hero-button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            animation: slideDown 0.8s ease-out 0.6s both;
+        }
+
+        .btn-hero {
+            padding: 16px 45px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-hero-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* ===== FEATURE 4: Floating Hearts ===== */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 40px;
+            animation: heartFloat 8s ease-in infinite;
+        }
+
+        @keyframes heartFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1);
+            }
+        }
+
+        /* ===== FEATURE 5: Image Gallery Section ===== */
+        .gallery-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 105, 180, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 60px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .image-card {
+            position: relative;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .image-card:nth-child(1) { animation-delay: 0s; }
+        .image-card:nth-child(2) { animation-delay: 0.1s; }
+        .image-card:nth-child(3) { animation-delay: 0.2s; }
+        .image-card:nth-child(4) { animation-delay: 0.3s; }
+
+        .image-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.4);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0), rgba(255, 105, 180, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .image-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* ===== FEATURE 6: Carousel Section ===== */
+        .carousel-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 105, 180, 0.08), rgba(255, 255, 255, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(100, 200, 255, 0.1));
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .carousel-track::-webkit-scrollbar-track {
+            background: rgba(255, 105, 180, 0.1);
+        }
+
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
+        .carousel-item {
+            min-width: 320px;
+            height: 280px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 105, 180, 0.8);
+            color: white;
+            border: none;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 28px;
+            z-index: 20;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-button:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 8px 30px rgba(255, 105, 180, 0.5);
+        }
+
+        .carousel-button.prev {
+            left: 20px;
+        }
+
+        .carousel-button.next {
+            right: 20px;
+        }
+
+        /* ===== FEATURE 7: Message Cards Section ===== */
+        .messages-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 105, 180, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.8s ease-out both;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .message-card:hover {
+            box-shadow: 0 25px 70px rgba(255, 105, 180, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .message-card h3 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .message-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+
+        .message-card .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ===== FEATURE 8: Reasons Grid ===== */
+        .reasons-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 105, 180, 0.08), rgba(255, 255, 255, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reason-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .reason-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .reason-card:nth-child(1) { animation-delay: 0s; }
+        .reason-card:nth-child(2) { animation-delay: 0.1s; }
+        .reason-card:nth-child(3) { animation-delay: 0.2s; }
+        .reason-card:nth-child(4) { animation-delay: 0.3s; }
+        .reason-card:nth-child(5) { animation-delay: 0.4s; }
+
+        .reason-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 192, 203, 0.15));
+        }
+
+        .reason-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .reason-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .reason-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== FEATURE 9: Counter Section ===== */
+        .counter-section {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--dark), #2d0052);
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .counter-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 50px;
+            text-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .counter-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .counter-box:nth-child(1) { animation-delay: 0s; }
+        .counter-box:nth-child(2) { animation-delay: 0.1s; }
+        .counter-box:nth-child(3) { animation-delay: 0.2s; }
+
+        .counter-box:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 105, 180, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+        }
+
+        .counter-number {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            animation: counterCount 2s ease-out;
+        }
+
+        @keyframes counterCount {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .counter-label {
+            font-size: 16px;
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        /* ===== FEATURE 10: Timeline ===== */
+        .timeline-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 105, 180, 0.08), rgba(255, 255, 255, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--accent), transparent);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 40px;
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+
+        .timeline-content {
+            width: 45%;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+        }
+
+        .timeline-content h4 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            margin-top: 25px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        /* ===== FEATURE 11: Birthday Wish Section ===== */
+        .wish-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 105, 180, 0.08));
+            position: relative;
+            z-index: 5;
+        }
+
+        .wish-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1300px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .wish-text h2 {
+            font-size: 44px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .wish-text p {
+            font-size: 17px;
+            color: #ddd;
+            line-height: 1.9;
+            margin: 15px 0;
+            animation: slideUp 0.8s ease-out 0.1s both;
+        }
+
+        .wish-text h3 {
+            font-size: 26px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 30px;
+            font-weight: 900;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        .neon-heart {
+            width: 350px;
+            height: 350px;
+            border: 4px solid var(--primary);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            background: rgba(255, 105, 180, 0.1);
+            box-shadow: 0 0 40px var(--primary), inset 0 0 40px rgba(255, 105, 180, 0.2);
+            animation: neonPulse 2.5s ease-in-out infinite, slideUp 0.8s ease-out;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% {
+                box-shadow: 0 0 40px var(--primary), inset 0 0 40px rgba(255, 105, 180, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 80px var(--primary), inset 0 0 80px rgba(255, 105, 180, 0.4);
+            }
+        }
+
+        /* ===== FEATURE 12: Testimonials Auto-scroll ===== */
+        .testimonials-section {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, rgba(255, 105, 180, 0.08), rgba(255, 255, 255, 0.08));
+            position: relative;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 30px;
+            animation: scroll 30s linear infinite;
+            max-width: 100%;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonials-track:hover {
+            animation-play-state: paused;
+        }
+
+        .testimonial-card {
+            flex: 0 0 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .testimonial-rating {
+            color: #FFD700;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* ===== FEATURE 13: Music Player Control ===== */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 105, 180, 0.95);
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .music-btn {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-label {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 50px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .music-label { display: block; }
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 15px;
+            }
+        }
+
+        /* ===== FEATURE 14: Scroll Reveal Animation ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== FEATURE 15: Modal Popup ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 30px;
+            max-width: 650px;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+            color: #999;
+            transition: all 0.2s ease;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-content h2 {
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .modal-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        /* ===== FEATURE 16: Share Buttons ===== */
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-facebook { background: #1877F2; color: white; }
+        .share-twitter { background: #1DA1F2; color: white; }
+        .share-whatsapp { background: #25D366; color: white; }
+        .share-copy { background: var(--primary); color: white; }
+
+        /* ===== FEATURE 17: Progress Bar ===== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 999;
+            width: 0;
+        }
+
+        /* ===== FEATURE 18: Confetti Trigger ===== */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1500;
+        }
+
+        /* ===== FEATURE 19: Footer ===== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(26, 0, 51, 0.95);
+            color: #ccc;
+            border-top: 2px solid rgba(255, 105, 180, 0.3);
+            position: relative;
+            z-index: 5;
+        }
+
+        footer p {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        .footer-heart {
+            color: var(--primary);
+            font-size: 18px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        footer .social-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            transform: scale(1.3);
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.6));
+        }
+
+        /* ===== FEATURE 20: Responsive Design ===== */
+        @media (max-width: 1024px) {
+            .wish-container {
+                grid-template-columns: 1fr;
+            }
+
+            .neon-heart {
+                width: 300px;
+                height: 300px;
+                font-size: 100px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 13px;
+                order: 3;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                margin-top: 200px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-name {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .counter-section {
+                padding: 60px 20px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .image-card {
+                height: 280px;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .message-card {
+                padding: 30px 20px;
+            }
+
+            .modal-content {
+                padding: 40px 25px;
+                margin: 20px;
+                max-width: 90vw;
+            }
+
+            .gallery-section,
+            .carousel-section,
+            .messages-section,
+            .reasons-section,
+            .timeline-section,
+            .wish-section,
+            .testimonials-section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particlesContainer"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo" onclick="scrollTo('#home')">💕 For My Love</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#messages">Messages</a></li>
+            <li><a href="#reasons">Special</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#wishes">Wishes</a></li>
+        </ul>
+        <div class="nav-btn-group">
+            <button class="btn-small btn-outline" onclick="openModal()">Birthday Card</button>
+            <button class="btn-small btn-primary" onclick="triggerCelebration()">Celebrate 🎉</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="floating-hearts" id="heartsContainer"></div>
+        <div class="hero-content">
+            <div class="hero-title">Happy Birthday 💕</div>
+            <div class="hero-name">Afreen Rukhsar</div>
+            <div class="hero-subtitle">
+                Every day with you is a beautiful gift,<br>
+                but today is extra special because it's all about you! ✨
+            </div>
+            <div class="hero-button-group">
+                <button class="btn-hero btn-hero-primary" onclick="triggerCelebration()">💕 Let's Celebrate! 💕</button>
+                <button class="btn-hero btn-hero-secondary" onclick="scrollTo('#gallery')">View Gallery 🎞️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">✨ Our Beautiful Moments ✨</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF69B4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FFB6D9;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23grad1)'/%3E%3Ctext x='200' y='200' font-size='100' text-anchor='middle' dominant-baseline='middle' fill='white'%3E💑%3C/text%3E%3C/svg%3E" alt="Together">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="image-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF1493;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF69B4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23grad2)'/%3E%3Ctext x='200' y='200' font-size='100' text-anchor='middle' dominant-baseline='middle' fill='white'%3E💐%3C/text%3E%3C/svg%3E" alt="Flowers">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="image-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FFB6D9;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FF1493;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23grad3)'/%3E%3Ctext x='200' y='200' font-size='100' text-anchor='middle' dominant-baseline='middle' fill='white'%3E🎂%3C/text%3E%3C/svg%3E" alt="Cake">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="image-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF69B4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23FFB6D9;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23grad4)'/%3E%3Ctext x='200' y='200' font-size='100' text-anchor='middle' dominant-baseline='middle' fill='white'%3E✨%3C/text%3E%3C/svg%3E" alt="Sparkle">
+                <div class="image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <h2 class="section-title">💕 Memory Lane 💕</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-item">💑</div>
+                    <div class="carousel-item">🌹</div>
+                    <div class="carousel-item">💐</div>
+                    <div class="carousel-item">🎂</div>
+                    <div class="carousel-item">✨</div>
+                    <div class="carousel-item">💕</div>
+                    <div class="carousel-item">🎉</div>
+                    <div class="carousel-item">🎊</div>
+                </div>
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">❮</button>
+                <button class="carousel-button next" onclick="scrollCarousel(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section class="messages-section" id="messages">
+        <h2 class="section-title">💝 Special Messages 💝</h2>
+        
+        <div class="message-card">
+            <h3>To My Special Love 💕</h3>
+            <p>
+                <span class="highlight">Afreen Rukhsar,</span><br><br>
+                You make my world brighter just by being in it. Your smile is my favorite sight and your happiness is my only wish. 
+                May this year bring you endless joy, success, good health and all the love your heart can hold.
+            </p>
+            <p style="margin-top: 20px; font-weight: 600; color: var(--primary);">
+                You deserve everything beautiful in this world. ❤️
+            </p>
+        </div>
+
+        <div class="message-card">
+            <h3>Happy 21st Birthday! 🎉</h3>
+            <p>
+                Today you turn 21, and I want you to know how incredibly special you are to me. 
+                Every moment with you is a gift, and I cherish every memory we create together.
+            </p>
+            <p style="margin-top: 20px;">
+                <span class="highlight">May this year be filled with beautiful moments, unforgettable experiences, and dreams coming true.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <h2 class="counter-title">Celebrating This Milestone 🎊</h2>
+        <div class="counter-grid">
+            <div class="counter-box">
+                <div class="counter-number" id="counter1">21</div>
+                <div class="counter-label">Years of Awesomeness</div>
+            </div>
+            <div class="counter-box">
+                <div class="counter-number" id="counter2">∞</div>
+                <div class="counter-label">Moments Together</div>
+            </div>
+            <div class="counter-box">
+                <div class="counter-number" id="counter3">💕</div>
+                <div class="counter-label">Love Always</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section class="reasons-section" id="reasons">
+        <h2 class="section-title">💕 Why You Are So Special 💕</h2>
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon">❤️</div>
+                <div class="reason-title">Your Heart</div>
+                <div class="reason-text">So kind, so pure and full of love.</div>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">😊</div>
+                <div class="reason-title">Your Smile</div>
+                <div class="reason-text">It can brighten my darkest days.</div>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">✨</div>
+                <div class="reason-title">Your Soul</div>
+                <div class="reason-text">Beautiful inside and out.</div>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">💫</div>
+                <div class="reason-title">Your Presence</div>
+                <div class="reason-text">Makes everything better.</div>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">♾️</div>
+                <div class="reason-title">You & Me</div>
+                <div class="reason-text">Our story is my favorite forever.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <h2 class="section-title">📅 Our Beautiful Journey 📅</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>The Beginning</h4>
+                    <p>When our love story started, you made my heart skip a beat.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Growing Together</h4>
+                    <p>Every day with you has been a precious moment to cherish.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Today - Your 21st Birthday</h4>
+                    <p>Celebrating you and all the beautiful moments yet to come!</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Auto-scroll) -->
+    <section class="testimonials-section">
+        <h2 class="section-title">💬 What People Say 💬</h2>
+        <div class="testimonials-track" id="testimonialTrack">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Afreen is an amazing person with the brightest smile!"</div>
+                <div class="testimonial-author">👤 A Close Friend</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"She brings joy to everyone around her."</div>
+                <div class="testimonial-author">👤 Family Member</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"The most caring and beautiful soul I know."</div>
+                <div class="testimonial-author">👤 Special Someone</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Turning 21 and still getting more amazing!"</div>
+                <div class="testimonial-author">👤 Friend Circle</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <!-- Duplicated for infinite scroll effect -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Afreen is an amazing person with the brightest smile!"</div>
+                <div class="testimonial-author">👤 A Close Friend</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"She brings joy to everyone around her."</div>
+                <div class="testimonial-author">👤 Family Member</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"The most caring and beautiful soul I know."</div>
+                <div class="testimonial-author">👤 Special Someone</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"Turning 21 and still getting more amazing!"</div>
+                <div class="testimonial-author">👤 Friend Circle</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Wish Section -->
+    <section class="wish-section" id="wishes">
+        <h2 class="section-title">💕 My Birthday Wish For You 💕</h2>
+        <div class="wish-container">
+            <div class="wish-text">
+                <h2>May All Your Dreams Come True 🌟</h2>
+                <p>
+                    May all your dreams come true, may you achieve everything you desire 
+                    and may life always treat you with happiness and love.
+                </p>
+                <p>
+                    At 21, you're stepping into a beautiful chapter full of endless possibilities. 
+                    I'm so grateful to be part of your journey.
+                </p>
+                <h3>Happy Birthday Once Again, My Love Afreen Rukhsar ❤️</h3>
+                <p style="margin-top: 20px; font-size: 16px; color: #999;">
+                    Today is yours, Tomorrow is ours, But every day is for our love. 💕
+                </p>
+            </div>
+            <div class="neon-heart">❤️</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <span class="footer-heart">❤️</span> for Afreen Rukhsar</p>
+        <p>Happy 21st Birthday! 🎉 May your day be as special as you are!</p>
+        <div class="social-links">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="WhatsApp">💬</a>
+        </div>
+    </footer>
+
+    <!-- Music Player Control -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-btn" onclick="toggleMusic()" id="musicBtn">🎵</button>
+        <span class="music-label">Music</span>
+    </div>
+
+    <!-- Birthday Modal -->
+    <div id="birthdayModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2>🎉 A Special Birthday Message 🎉</h2>
+            <p style="margin-top: 20px;">
+                <strong style="color: var(--primary);">Dearest Afreen Rukhsar,</strong>
+            </p>
+            <p>
+                Today marks a beautiful milestone in your life! At 21, you're stepping into a world of new adventures, 
+                endless possibilities, and unforgettable memories.
+            </p>
+            <p>
+                Every single day with you is a blessing. Your kindness, your smile, your presence - they mean the world to me. 
+                I feel so lucky to love someone as amazing as you.
+            </p>
+            <p>
+                May this special day be filled with love, laughter, and magic. 
+                May this year bring you endless joy, success, and all the love your heart can hold.
+            </p>
+            <p style="font-size: 18px; margin-top: 25px; text-align: center;">
+                ❤️ 💕 💖 🎂 ✨ 🎉 🎊 🌹 💐
+            </p>
+            <p style="margin-top: 25px; font-weight: 600; color: var(--primary); text-align: center;">
+                Forever yours, With all my love ❤️
+            </p>
+            <div class="share-buttons">
+                <button class="share-btn share-facebook" onclick="shareOn('facebook')" title="Share on Facebook">f</button>
+                <button class="share-btn share-twitter" onclick="shareOn('twitter')" title="Share on Twitter">𝕏</button>
+                <button class="share-btn share-whatsapp" onclick="shareOn('whatsapp')" title="Share on WhatsApp">💬</button>
+                <button class="share-btn share-copy" onclick="copyLink()" title="Copy Link">📋</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== FEATURE 1: Initialize Particles =====
+        function initParticles() {
+            const container = document.getElementById('particlesContainer');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 20) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // ===== FEATURE 2: Floating Hearts Generation =====
+        function createFloatingHearts() {
+            const container = document.getElementById('heartsContainer');
+            const hearts = ['❤️', '💕', '💖', '💗'];
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 3 + 's';
+                heart.style.fontSize = Math.random() * 25 + 20 + 'px';
+                container.appendChild(heart);
+                setTimeout(() => heart.remove(), 10000);
+            }, 300);
+        }
+
+        // ===== FEATURE 3: Navbar Scroll Effect =====
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const progressBar = document.getElementById('progressBar');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // ===== FEATURE 4: Smooth Scroll Navigation =====
+        function scrollTo(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                scrollTo(this.getAttribute('href'));
+            });
+        });
+
+        // ===== FEATURE 5: Carousel Scroll =====
+        function scrollCarousel(direction) {
+            const track = document.getElementById('carouselTrack');
+            const scrollAmount = 340;
+            track.scrollLeft += direction * scrollAmount;
+        }
+
+        // ===== FEATURE 6: Confetti Celebration =====
+        function triggerCelebration() {
+            const confettiPieces = 100;
+            const emojis = ['🎉', '🎊', '💕', '❤️', '🎂', '✨', '🎈', '💐', '🌹', '👑'];
+
+            for (let i = 0; i < confettiPieces; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                confetti.style.fontSize = Math.random() * 30 + 20 + 'px';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = '-50px';
+
+                document.body.appendChild(confetti);
+
+                const duration = Math.random() * 4 + 2.5;
+                const xVel = (Math.random() - 0.5) * 15;
+                const yVel = Math.random() * 8 + 6;
+                let x = parseFloat(confetti.style.left);
+                let y = 0;
+                let vx = xVel;
+                let vy = yVel;
+                let rot = 0;
+
+                const start = Date.now();
+                function animate() {
+                    const elapsed = (Date.now() - start) / 1000;
+                    if (elapsed < duration) {
+                        y += vy;
+                        x += vx;
+                        rot += 20;
+                        vy += 0.2;
+                        confetti.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+                        requestAnimationFrame(animate);
+                    } else {
+                        confetti.remove();
+                    }
+                }
+                animate();
+            }
+        }
+
+        // ===== FEATURE 7: Modal Control =====
+        function openModal() {
+            document.getElementById('birthdayModal').style.display = 'flex';
+            triggerCelebration();
+        }
+
+        function closeModal() {
+            document.getElementById('birthdayModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('birthdayModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // ===== FEATURE 8: Music Player =====
+        let isPlaying = false;
+        function toggleMusic() {
+            const btn = document.getElementById('musicBtn');
+            isPlaying = !isPlaying;
+            btn.textContent = isPlaying ? '🎵' : '🔇';
+            // In real implementation, add audio play/pause logic
+        }
+
+        // ===== FEATURE 9: Share Functions =====
+        function shareOn(platform) {
+            const url = window.location.href;
+            const text = "Check out Afreen Rukhsar's 21st Birthday Celebration! 🎉❤️";
+            
+            const urls = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+                twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+                whatsapp: `https://wa.me/?text=${text} ${url}`
+            };
+            
+            if (urls[platform]) {
+                window.open(urls[platform], '_blank');
+            }
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard! 📋');
+            });
+        }
+
+        // ===== FEATURE 10: Scroll Reveal Animation =====
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // ===== Initialization =====
+        initParticles();
+        createFloatingHearts();
+        
+        // Trigger initial confetti on page load
+        window.addEventListener('load', () => {
+            setTimeout(triggerCelebration, 500);
+        });
+    </script>
+</body>
+</html>
